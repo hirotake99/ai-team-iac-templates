@@ -1,0 +1,34 @@
+# Azure and Bicep files
+*.json.lock
+*.parameters.local.json
+*.parameters.secret.json
+deploymentOutputs.json
+
+# ARM Template outputs
+arm-templates/
+*.arm.json
+
+# Local settings
+.env
+.env.local
+local.settings.json
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.vs/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary
+*.tmp
+*.temp
+*.bak

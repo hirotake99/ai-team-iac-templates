@@ -1,0 +1,23 @@
+{
+  "analyzers": {
+    "core": {
+      "enabled": true,
+      "rules": {
+        "no-hardcoded-env-urls": {
+          "level": "error"
+        },
+        "no-unused-params": {
+          "level": "warning"
+        },
+        "secure-parameter-default": {
+          "level": "error"
+        }
+      }
+    }
+  },
+  "experimentalFeaturesEnabled": {
+    "symbolicNameCodegen": true,
+    "extensibility": true,
+    "resourceTypedParamsAndOutputs": true
+  }
+}
