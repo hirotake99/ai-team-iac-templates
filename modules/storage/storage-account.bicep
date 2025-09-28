@@ -1,22 +1,24 @@
+// =============================================================================
+// フェーズ 1: シチュエーションによって変わるパラメータの定義
+// 「ストレージアカウント名」と「ロケーション」は、templatesのmain.bicepで記載する
+// =============================================================================
 @description('ストレージアカウントの名前')
 param storageAccountName string
-
 @description('ストレージアカウントのロケーション')
 param location string = resourceGroup().location
 
-@description('ストレージアカウントのタイプ')
-@allowed([
-  'Standard_LRS'
-  'Standard_GRS'
-  'Standard_RAGRS'
-])
-param storageAccountType string = 'Standard_LRS'
+// =============================================================================
+// フェーズ 2: 共通設定パラメータ（デフォルト値あり）
+// =============================================================================
+@description('Tags to apply to the storage account')
+param tags object = {}
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: storageAccountName
   location: location
+  tags: tags
   sku: {
-    name: storageAccountType
+    name: 'Standard_LRS'
   }
   kind: 'Storage'
 }
